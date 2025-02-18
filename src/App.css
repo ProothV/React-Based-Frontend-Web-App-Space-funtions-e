@@ -1,8 +1,19 @@
-.App {
-  text-align: center;
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
+/* App styling */
+.App {
+  text-align: center;
+  position: relative;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -11,8 +22,35 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+} */
+
+/* .bubbling {
+  animation: bubble 3s infinite ease-in-out;
 }
 
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(10);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+} */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.bubbling {
+  animation: pulse 1.5s infinite;
+}
+
+
+/* App header */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,17 +60,850 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+  z-index: 1;
+}
+.home h1{
+  font-weight: bold;
+  color: wheat;
+  
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
 }
 
+/* Video background */
+.App video {
+  position: fixed; /* Ensures video spans the entire viewport */
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Styling for links
 .App-link {
   color: #61dafb;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
+/* Keyframe animation */
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+} */ */
+
+/* Section styling */
+section {
+  width: 100%;
+  padding: 50px 20px; /* Spacing inside sections */
+  text-align: center;
+  background-color: #f0f0f0; /* Light gray background for sections */
+}
+/*about section*/
+
+.about-section-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #000; /* Black background to match space theme */
+  color: white;
+  overflow: hidden;
+}
+
+.about-background-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Keeps background behind content */
+  opacity: 1; /* Adds subtle effect */
+}
+
+.about-section-image-container img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.flying {
+  animation: fly 4s infinite alternate-reverse;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
+}
+
+.about-section-text-container {
+  max-width: 600px;
+  margin-left: 50px;
+}
+
+.primary-subheading {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffcc00; /* Space-inspired yellow */
+}
+
+.primary-heading {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.primary-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-buttons-container {
+  display: flex;
+  gap: 20px;
+}
+
+.secondary-button {
+  padding: 10px 20px;
+  border: 2px solid #ffcc00;
+  background-color: transparent;
+  color: #ffcc00;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+.watch-video-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.watch-video-button:hover {
+  background-color: #e6b800;
+}
+
+/* Alternate background for sections */
+section:nth-child(even) {
+  background-color: #e0e0e0;
+}
+/* work section */
+
+/* Satellite Work Section */
+.satellite-work-container {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.satellite-work-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subheading {
+  font-size: 24px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.section-text {
+  font-size: 18px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.satellite-features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  background-color: #1b1b32;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  flex: 1;
+}
+
+.feature-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+.primary-button {
+  padding: 15px 30px;
+  background-color: #ffcc00;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #e6b800;
+}
+
+/* Add consistent spacing between sections */
+section:not(:last-child) {
+  margin-bottom: 0; /* Prevent unexpected gaps */
+}
+
+/* team section */
+
+
+/* Team Section Container */
+.team-section-container {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Space-inspired gradient */
+  color: white;
+  text-align: center;
+}
+
+/* Introduction Section */
+.team-intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.section-subheading {
+  font-size: 24px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Team Members Grid */
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual Team Card */
+.team-card {
+  background-color: #16213e;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Team Member Image */
+.team-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #ffcc00;
+}
+
+/* Team Member Name */
+.team-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffcc00;
+}
+
+/* Team Member Role */
+.team-role {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #e0e0e0;
+}
+
+/* Team Member Description */
+.team-description {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #c0c0c0;
+}
+
+
+/* notification section */
+/* Events & Notifications Section */
+.events-notifications-container {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #091236, #1e215d);
+  color: white;
+}
+
+/* Notifications Section */
+.notifications-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.notification-slider {
+  overflow: hidden;
+  height: 50px;
+  margin: 20px auto;
+  position: relative;
+  max-width: 800px;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  background-color: #1a1a2e;
+}
+
+.sliding-text {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  animation: slide-text 5s linear infinite;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+@keyframes slide-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Events Section */
+.events-section {
+  text-align: center;
+}
+
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.event-card {
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.event-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.event-date {
+  font-size: 16px;
+  color: #e0e0e0;
+  margin: 10px 0;
+}
+
+.event-description {
+  font-size: 14px;
+  color: #c0c0c0;
+  line-height: 1.4;
+}
+
+/* Section Subheading */
+.section-subheading {
+  font-size: 24px;
+  color: #ffcc00;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* galaxy point */
+/* Galaxy Point Section */
+.galaxy-point-container {
+  position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #090a1b, #1f1d36);
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Galaxy Background Animation */
+.galaxy-animation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/cosmic.png');
+  opacity: 0.1;
+  animation: galaxy-spin 30s linear infinite;
+  z-index: -1;
+}
+
+@keyframes galaxy-spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+/* Introduction Section */
+.galaxy-intro {
+  margin-bottom: 50px;
+}
+
+.galaxy-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.galaxy-title span {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+}
+
+.galaxy-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Galaxy Facts Section */
+.galaxy-facts {
+  margin-bottom: 50px;
+}
+
+.galaxy-facts-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.galaxy-fact {
+  font-size: 16px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.fact-icon {
+  color: #ffcc00;
+  margin-right: 8px;
+}
+
+/* Suggestions Section */
+.suggestion-section {
+  margin-bottom: 50px;
+}
+
+.suggestion-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.suggestion-box input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+}
+
+.suggestion-box button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #ffcc00;
+  color: #090a1b;
+  font-weight: bold;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.suggestion-box button:hover {
+  background-color: #ff9900;
+}
+
+.suggestions-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.suggestion-item {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Bot Section */
+.bot-section {
+  position: relative;
+}
+
+.bot-toggle-button {
+  background-color: #1f1d36;
+  color: white;
+  font-size: 18px;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+}
+
+.bot-toggle-button:hover {
+  background-color: #ffcc00;
+  color: #090a1b;
+}
+
+.bot-response {
+  margin-top: 20px;
+  background: #1f1d36;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ffcc00;
+  font-size: 16px;
+}
+
+/* rocket section */
+/* Rocketry Section */
+.rocketry-section-container {
+  padding: 100px 20px;
+  background: radial-gradient(circle, #090a1b, #1f1d36);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Animation */
+.rocketry-animation-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.transparenttextures.com/patterns/space-halo.png");
+  animation: pulse 8s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Title */
+.rocketry-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.rocketry-title span {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+}
+
+.rocketry-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 50px auto;
+}
+
+/* Historical Achievements */
+.historical-achievements {
+  margin-bottom: 50px;
+}
+
+.historical-achievements h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.achievement-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.achievement-card {
+  background: #1f1d36;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card h3 {
+  font-size: 20px;
+  color: #ffcc00;
+}
+
+.achievement-card p {
+  font-size: 14px;
+  color: #c0c0c0;
+  margin: 10px 0;
+}
+
+.achievement-card span {
+  font-size: 12px;
+  color: #ff9900;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.5);
+}
+
+/* Statistics Section */
+.statistics-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.pie-chart-container, .bar-chart-container {
+  background: #1f1d36;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pie-chart-container h3, .bar-chart-container h3 {
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+
+/* footer section */
+
+/* Footer Styles */
+.footer-container {
+  font-family: Arial, sans-serif;
+  padding: 50px 20px;
+}
+
+.footer-logo {
+  font-size: 36px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1);
+  text-transform: uppercase;
+}
+
+.footer-intro {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.footer-icon {
+  color: #ffcc00;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.social-icon {
+  font-size: 20px;
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffcc00;
+  transform: scale(1.2);
+}
+
+.list-unstyled li {
+  color: #ccc;
+  margin: 5px 0;
+}
+
+.list-unstyled li:hover {
+  color: #ffcc00;
+}
+
+.footer-divider {
+  border-color: #444;
+}
+.ag{
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+}
+
+
+/* Footer styling */
+/* footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent unintended gaps */
+/* body {
+  margin: 0;
+  padding: 0;
+} */ 
+
+
+/* extraass cut */
+.team-card {
+   animation: bubble 3s infinite ease-in-out;
+  }
+
+  @keyframes bubble {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+}
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.feature-card {
+  animation: shake 1s infinite;
+}
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.8;
+  }
+}
+
+.footer-logo {
+  animation: flicker 1.5s infinite;
 }

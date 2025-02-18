@@ -1,0 +1,39 @@
+.about{
+    margin-top: 20px;
+    background-color: black;
+    margin-top: 19vh;
+}
+.navbar-brand{
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+    background-image: url("C:/Users/harsh/ReactJs/web_app/src/component/image/earth.png");
+    border-radius: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: #ff9900 solid 2px;
+}
+.navbar a{
+    color: black;
+}
+.coloumn{
+    margin: 0%;
+    background-color: black;
+}
+.info{
+    margin: 0%;
+    background-color: black;
+}
+.footer{
+    margin: 0;
+    background-color: black;
+}
+.footer ul li{
+    background: transparent;
+    color: aliceblue;
+}
+
+.coloumn img{
+    height: 200px;
+}
+.info img{
+    height: 400px;
+}
